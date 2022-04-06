@@ -8,7 +8,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [vue(), VitePWA({
     srcDir: 'src',
-    filename: 'sw.js',
+    filename: 'service-worker.js',
     manifest: {
       name: "Kimepop PWA",
       theme_color: "#c3c3c3"
