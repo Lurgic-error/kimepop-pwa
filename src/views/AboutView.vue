@@ -14,11 +14,3 @@
 }
 </style>
 
-<script setup>import { onMounted } from 'vue';
-import registerServiceWorker from '../sw';
-
-
-onMounted(() => {
-  registerServiceWorker()
-})
-</script>
