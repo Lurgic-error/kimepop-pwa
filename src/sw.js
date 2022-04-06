@@ -43,7 +43,7 @@ const registerServiceWorker = () => {
     }
 }
 
-export function subscribeUser(register){
+export async function subscribeUser(register){
     // Register Push
     console.log('Registering Push Notification Subscription.\n')
     const subscription = await register.pushManager.subscribe({
