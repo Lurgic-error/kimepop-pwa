@@ -43,6 +43,27 @@ const registerServiceWorker = () => {
     }
 }
 
+export function subscribeUser(register){
+    // Register Push
+    console.log('Registering Push Notification Subscription.\n')
+    const subscription = await register.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
+    })
+    console.log('Completed registering push.\n')
+
+    // Send Push Notification
+    console.log('Sending Push Notifications Subscription')
+    await fetch('/subscribe', {
+        method: 'POST',
+        body: JSON.stringify(subscription),
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
+
+    console.log('Completed sending push notification.\n')
+}
 
 
 function urlBase64ToUint8Array(base64String) {
