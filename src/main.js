@@ -9,7 +9,7 @@ const updateSW = registerSW({
 //   onOfflineReady() {},
 onRegistered(registration){
     console.log('sw registration', registration)
-    subscribeUser(registration)
+    subscribeUser(registration).then(data => console.log('data', data))
 }
 })
 
